@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @JsonFilter("StudentBeanFilter")
 public class StudentBean {
     private String username;
-//    @JsonIgnore
+    //@JsonIgnore
     private String password;
 
     public String getUsername() {

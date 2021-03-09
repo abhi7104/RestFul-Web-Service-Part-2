@@ -16,7 +16,8 @@ public class StudentController {
     @GetMapping("/dynamic-filtering")
     @ApiModelProperty(notes = "Dynamic filtering of Password  field")
     public MappingJacksonValue retrieveStudent(){
-       List<StudentBean> list = Arrays.asList(new StudentBean("abhi","abhipass"),new StudentBean("nitin","nitinpass"));
+       List<StudentBean> list = Arrays.asList(new StudentBean("abhi","abhipass"),
+               new StudentBean("nitin","nitinpass"));
         SimpleBeanPropertyFilter filter = SimpleBeanPropertyFilter.filterOutAllExcept("username");
         FilterProvider filters =new SimpleFilterProvider().addFilter("StudentBeanFilter",filter);
         MappingJacksonValue mapping= new MappingJacksonValue(list);
@@ -27,6 +28,7 @@ public class StudentController {
     @GetMapping("/static-filtering")
     @ApiModelProperty(notes = "Static filtering of Password  field")
     public List<StudentBean> retrieveStudentDetails(){
-        return Arrays.asList(new StudentBean("abhi","abhipass"),new StudentBean("nitin","nitinpass"));
+        return Arrays.asList(new StudentBean("abhi","abhipass"),
+                new StudentBean("nitin","nitinpass"));
     }
 }
